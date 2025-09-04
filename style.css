@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #007bff;
+    --background-color: #1a1a2e;
+    --container-bg-color: #2c2c42;
+    --text-color: #fff;
+    --input-bg-color: #444;
+    --input-border-color: #666;
+    --button-bg-color: #0056b3;
+    --task-bg-color: #3e3e50;
+    --completed-text-color: #aaa;
+    --completed-line-color: #ff0000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.todo-container {
+    background-color: var(--container-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#task-input, #task-datetime {
+    flex-grow: 1;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    padding: 0.75rem;
+    border-radius: 5px;
+}
+
+#add-task-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-task-button:hover {
+    background-color: var(--button-bg-color);
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: var(--task-bg-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: var(--completed-text-color);
+    opacity: 0.6;
+}
+
+.task-item .task-text {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+.task-item .task-info {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 0.25rem;
+}
+
+.task-item button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: color 0.3s;
+}
+
+.task-item button.edit-btn:hover {
+    color: #ffc107;
+}
+
+.task-item button.delete-btn:hover {
+    color: var(--completed-line-color);
+}
+
+.task-item button.complete-btn:hover {
+    color: var(--correct-color); /* You can define a correct color variable */
+}
+
+@media (max-width: 480px) {
+    .input-section {
+        flex-direction: column;
+    }
+}
